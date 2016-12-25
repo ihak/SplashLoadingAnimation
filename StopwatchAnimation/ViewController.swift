@@ -36,6 +36,8 @@ class ViewController: UIViewController, CAAnimationDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         startWatchAnimation()
+        
+        self.view.layoutSubviews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -146,7 +148,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
             
             pieShape = CAShapeLayer()
             pieShape?.fillColor   = UIColor.clear.cgColor
-            pieShape?.strokeColor = UIColor(colorLiteralRed: 230.0/256.0, green: 84.0/256.0, blue: 65.0/256.0, alpha: 1.0).cgColor
+            pieShape?.strokeColor = UIColor(colorLiteralRed: 18.0/256.0, green: 76.0/256.0, blue: 155.0/256.0, alpha: 1.0).cgColor
             pieShape?.lineWidth   = rect.size.width
             pieShape?.borderColor = UIColor.clear.cgColor
 
