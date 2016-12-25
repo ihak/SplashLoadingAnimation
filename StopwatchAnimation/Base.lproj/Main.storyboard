@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopwatchAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-zn-6LQ" userLabel="WatchView">
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVj-y3-t7a">
+                                        <frame key="frameInset" minX="9" minY="17" width="8" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stop_watch" translatesAutoresizingMaskIntoConstraints="NO" id="ZuH-xI-GDE">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZuH-xI-GDE" secondAttribute="height" multiplier="27:34" id="6aN-kV-OLG"/>
+                                            <constraint firstAttribute="width" secondItem="ZuH-xI-GDE" secondAttribute="height" multiplier="0.81" id="liK-ZS-jY3"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="6aN-kV-OLG"/>
+                                                <exclude reference="liK-ZS-jY3"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZuH-xI-GDE" secondAttribute="bottom" id="Bec-ED-Nyq"/>
+                                    <constraint firstItem="ZuH-xI-GDE" firstAttribute="leading" secondItem="5Ux-zn-6LQ" secondAttribute="leading" id="NiN-oH-gYs"/>
+                                    <constraint firstItem="ZuH-xI-GDE" firstAttribute="top" secondItem="5Ux-zn-6LQ" secondAttribute="top" id="T1q-mK-yhZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZuH-xI-GDE" secondAttribute="trailing" id="jiG-be-6Bh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Ux-zn-6LQ" secondAttribute="bottom" constant="30" id="ZWY-ap-qBK"/>
+                            <constraint firstItem="5Ux-zn-6LQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p10-TR-oHm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stopwatchCircle" destination="sVj-y3-t7a" id="45I-Dm-AO8"/>
+                        <outlet property="stopwatchImageView" destination="ZuH-xI-GDE" id="HYJ-gO-vrg"/>
+                        <outlet property="stopwatchView" destination="5Ux-zn-6LQ" id="vMH-lo-ffa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="stop_watch" width="27" height="34"/>
+    </resources>
+</document>
