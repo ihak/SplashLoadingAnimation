@@ -11,7 +11,6 @@
 		2FE4A73D1E22948E006CACF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4A7351E22948E006CACF2 /* Assets.xcassets */; };
 		2FE4A73E1E22948E006CACF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4A7361E22948E006CACF2 /* LaunchScreen.storyboard */; };
 		2FE4A73F1E22948E006CACF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4A7381E22948E006CACF2 /* Main.storyboard */; };
-		2FE4A7401E22948E006CACF2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4A73A1E22948E006CACF2 /* Info.plist */; };
 		2FE4A7411E22948E006CACF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4A73B1E22948E006CACF2 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,7 +126,6 @@
 				2FE4A73D1E22948E006CACF2 /* Assets.xcassets in Resources */,
 				2FE4A73F1E22948E006CACF2 /* Main.storyboard in Resources */,
 				2FE4A73E1E22948E006CACF2 /* LaunchScreen.storyboard in Resources */,
-				2FE4A7401E22948E006CACF2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

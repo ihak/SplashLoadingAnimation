@@ -9,23 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController, CAAnimationDelegate {
-
-    /*
-     @property (weak, nonatomic) IBOutlet UIView *stopWatchView;
-     @property (weak, nonatomic) IBOutlet UIImageView *stopWatchImage;
-     @property (weak, nonatomic) IBOutlet UIView *stopWatchCircle;
-     @property (strong, nonatomic) CABasicAnimation *fillWatchAnimation;
-     
-     @property (strong, nonatomic) CAShapeLayer *pieShape;
-     @property (assign, nonatomic) BOOL reverseAnimation;
-     */
     
     let kFillAnimation = "FillAnimation"
     let kClearAnimation = "ClearAnimation"
     
-    @IBOutlet var stopwatchView: UIView!
-    @IBOutlet var stopwatchImageView: UIImageView!
-    @IBOutlet var stopwatchCircle: UIView!
+    @IBOutlet var loaderView: UIView!
+    @IBOutlet var loaderImageView: UIImageView!
+    @IBOutlet var loaderCircle: UIView!
     
     var fillWatchAnimation: CASpringAnimation!
     var pieShape: CAShapeLayer?
@@ -35,7 +25,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        startWatchAnimation()
+        startAnimation()
         
         self.view.layoutSubviews()
     }
@@ -46,21 +36,21 @@ class ViewController: UIViewController, CAAnimationDelegate {
     }
     
     //MARK: - Stopwatch Animation
-    func startWatchAnimation() {
+    func startAnimation() {
         print("Watch animation started.")
-        self.fillWatchDial()
+        self.fillDial()
     }
 
-    func stopWatchAnimation() {
+    func stopAnimation() {
         print("Watch animation stopped.")
         pieShape?.removeAllAnimations()
         pieShape?.removeFromSuperlayer()
-        self.stopwatchView.isHidden = true
+        self.loaderView.isHidden = true
     }
     
-    func fillWatchDial() {
+    func fillDial() {
         if pieShape == nil {
-            let rect = self.view.convert(self.stopwatchCircle.bounds, from: nil)
+            let rect = self.view.convert(self.loaderCircle.bounds, from: nil)
             
             let startAngle = M_PI * 1.5
             let endAngle = startAngle + (M_PI * 2)
@@ -75,7 +65,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
             innerbezierPath.addArc(withCenter: CGPoint(x: rect.size.width/2, y: rect.size.height / 2), radius: rect.size.width/2, startAngle: CGFloat(startAngle), endAngle: CGFloat((endAngle - startAngle) * 1 + startAngle), clockwise: true)
             pieShape?.path = innerbezierPath.cgPath
 
-            self.stopwatchCircle.layer.addSublayer(pieShape!)
+            self.loaderCircle.layer.addSublayer(pieShape!)
             
             fillWatchAnimation = CASpringAnimation(keyPath: "strokeEnd")
             
@@ -100,7 +90,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
             let bezierPath = UIBezierPath(cgPath: pieShape!.path!)
             
             pieShape!.path = bezierPath.reversing().cgPath
-            self.stopwatchCircle.layer.addSublayer(pieShape!)
+            self.loaderCircle.layer.addSublayer(pieShape!)
 
             fillWatchAnimation = CASpringAnimation(keyPath: "strokeEnd")
             fillWatchAnimation.initialVelocity = -5.0
@@ -126,7 +116,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if anim == self.pieShape!.animation(forKey: kFillAnimation) {
-            fillWatchDial()
+            fillDial()
         }
     }
 }

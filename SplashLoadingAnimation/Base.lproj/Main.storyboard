@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-zn-6LQ" userLabel="LoaderView">
@@ -25,7 +25,7 @@
                                         <frame key="frameInset" minX="16" minY="25" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stop_watch" translatesAutoresizingMaskIntoConstraints="NO" id="ZuH-xI-GDE" userLabel="Image View">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loader_frame" translatesAutoresizingMaskIntoConstraints="NO" id="ZuH-xI-GDE" userLabel="Image View">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZuH-xI-GDE" secondAttribute="height" multiplier="27:34" id="6aN-kV-OLG"/>
                                             <constraint firstAttribute="width" secondItem="ZuH-xI-GDE" secondAttribute="height" multiplier="0.81" id="liK-ZS-jY3"/>
@@ -53,9 +53,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="stopwatchCircle" destination="sVj-y3-t7a" id="45I-Dm-AO8"/>
-                        <outlet property="stopwatchImageView" destination="ZuH-xI-GDE" id="HYJ-gO-vrg"/>
-                        <outlet property="stopwatchView" destination="5Ux-zn-6LQ" id="vMH-lo-ffa"/>
+                        <outlet property="loaderCircle" destination="sVj-y3-t7a" id="tD6-Ku-f38"/>
+                        <outlet property="loaderImageView" destination="ZuH-xI-GDE" id="2SO-CQ-tOz"/>
+                        <outlet property="loaderView" destination="5Ux-zn-6LQ" id="7QM-hr-F6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -64,6 +64,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="stop_watch" width="53" height="71"/>
+        <image name="loader_frame" width="53" height="71"/>
     </resources>
 </document>
