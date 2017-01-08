@@ -7,4 +7,4 @@ Just copy and paste the 'LoaderView' from Main.storyboard to your intended viewc
 # Starting and stopping the animation
 Call startAnimation and stopAnimation functions to start and stop animation.
 
-![alt tag](https://github.com/ihak/SplashLoadingAnimation/blob/master/SplashLoadingAnimation/Assets.xcassets/loader_frame.imageset/loader.png)
+![alt tag](https://github.com/ihak/SplashLoadingAnimation/blob/master/1hak9w.gif)
