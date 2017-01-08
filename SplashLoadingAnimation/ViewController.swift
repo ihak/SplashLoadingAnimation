@@ -46,13 +46,6 @@ class ViewController: UIViewController, CAAnimationDelegate {
     }
     
     //MARK: - Stopwatch Animation
-    /*
-     - (void)startWatchAnimation {
-     NSLog(@"Start Watch Animation");
-     [self fillWatchDial];
-     }
-
- */
     func startWatchAnimation() {
         print("Watch animation started.")
         self.fillWatchDial()
@@ -60,85 +53,11 @@ class ViewController: UIViewController, CAAnimationDelegate {
 
     func stopWatchAnimation() {
         print("Watch animation stopped.")
-        /*
-         {
-         NSLog(@"Stop Watch Animation");
-         [_pieShape removeAllAnimations];
-         [_pieShape removeFromSuperlayer];
-         _pieShape = nil;
-         self.stopWatchView.hidden = YES;
-         }
-         */
-        
         pieShape?.removeAllAnimations()
         pieShape?.removeFromSuperlayer()
         self.stopwatchView.isHidden = true
     }
     
-    /*
-     {
-     if (_pieShape == nil) {
-     CGRect rect = [self.view convertRect:self.stopWatchCircle.bounds toView:nil];
-     
-     CGFloat startAngle = M_PI * 1.5;
-     CGFloat endAngle = startAngle + (M_PI * 2);
-     
-     _pieShape = [CAShapeLayer layer];
-     _pieShape.fillColor   = [UIColor clearColor].CGColor;
-     _pieShape.strokeColor = [UIColor primaryColor].CGColor;
-     _pieShape.lineWidth   = rect.size.width;
-     _pieShape.borderColor = [UIColor clearColor].CGColor;
-     
-     UIBezierPath *innerbezierPath = [UIBezierPath bezierPath];
-     [innerbezierPath addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2)
-     radius:(rect.size.width / 2)
-     startAngle:startAngle
-     endAngle:(endAngle - startAngle) * 1 + startAngle
-     clockwise:YES];
-     _pieShape.path = innerbezierPath.CGPath;
-     
-     [self.stopWatchCircle.layer addSublayer:_pieShape];
-     
-     _fillWatchAnimation = [CASpringAnimation animationWithKeyPath:@"strokeEnd"];
-     if ([_fillWatchAnimation respondsToSelector:@selector(setInitialVelocity:)]) {
-     ((CASpringAnimation *)_fillWatchAnimation).initialVelocity = -5.0;
-     }
-     ((CASpringAnimation *)_fillWatchAnimation).damping = 10.0;
-     ((CASpringAnimation *)_fillWatchAnimation).stiffness = 50.0;
-     _fillWatchAnimation.duration = 1.3;
-     _fillWatchAnimation.delegate = self;
-     _fillWatchAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-     _fillWatchAnimation.toValue = [NSNumber numberWithFloat:1.0f];
-     _fillWatchAnimation.removedOnCompletion = NO;
-     _fillWatchAnimation.fillMode = kCAFillModeForwards;
-     [_pieShape addAnimation:_fillWatchAnimation forKey:kFillAnimation];
-     _reverseAnimation = YES;
-     }
-     else {
-     float fromValue = _reverseAnimation ? 1.0 : 0.0;
-     float toValue = _reverseAnimation ? 0.0 : 1.0;
-     
-     UIBezierPath *b = [UIBezierPath bezierPathWithCGPath:_pieShape.path];
-     _pieShape.path = [b bezierPathByReversingPath].CGPath;
-     [self.stopWatchCircle.layer addSublayer:_pieShape];
-     
-     _fillWatchAnimation = [CASpringAnimation animationWithKeyPath:@"strokeEnd"];
-     if ([_fillWatchAnimation respondsToSelector:@selector(setInitialVelocity:)]) {
-     ((CASpringAnimation *)_fillWatchAnimation).initialVelocity = -5.0;
-     }
-     ((CASpringAnimation *)_fillWatchAnimation).damping = 10.0;
-     ((CASpringAnimation *)_fillWatchAnimation).stiffness = 50.0;
-     _fillWatchAnimation.duration = 1.3;
-     _fillWatchAnimation.delegate = self;
-     _fillWatchAnimation.fromValue = [NSNumber numberWithFloat:fromValue];
-     _fillWatchAnimation.toValue = [NSNumber numberWithFloat:toValue];
-     _fillWatchAnimation.removedOnCompletion = NO;
-     _fillWatchAnimation.fillMode = kCAFillModeForwards;
-     [_pieShape addAnimation:_fillWatchAnimation forKey:kFillAnimation];
-     _reverseAnimation = !_reverseAnimation;
-     }
-     }
-     */
     func fillWatchDial() {
         if pieShape == nil {
             let rect = self.view.convert(self.stopwatchCircle.bounds, from: nil)

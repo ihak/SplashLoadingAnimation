@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:StopwatchAnimation.xcodeproj">
+      location = "self:/Users/hak/projects/misc/StopwatchAnimation/SplashLoadingAnimation.xcodeproj">
    </FileRef>
 </Workspace>
